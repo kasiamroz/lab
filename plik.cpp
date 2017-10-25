@@ -1,35 +1,27 @@
 #include <iostream>
 using namespace std;
-
-void sortowanie_babelkowe(int tab[],int n)
+int main()
 {
-  for(int i=0;i<n;i++)
-    for(int j=1;j<n-i;j++)
-    if(tab[j-1]>tab[j])
-      swap(tab[j-1], tab[j]);
+int tab[10]={34,75,2,33,9,57,8,192,658,8};
+int najwiekszy;
+int najmniejszy;
+
+
+najwiekszy = tab[ 0 ];
+najmniejszy = tab[ 0 ]; 
+
+for( int i = 1; i < 10; i++ )
+{
+    if( tab[ i ] > najwiekszy )
+         najwiekszy = tab[ i ]; 
+    
+    if( tab[ i ] < najmniejszy )
+         najmniejszy = tab[ i ];
+    
+}
+cout<<najmniejszy<<endl;
+cout<<najwiekszy<<endl;
 }
 
-int main()
-    {
-		
-		int *tab, n;
- 
-  cout<<"Ile liczb będziesz chciał posortować? ";
-  cin>>n;
- 
-  tab = new int [n];
-  for(int i=0;i<n;i++)
-    cin>>tab[i];
- 
-  sortowanie_babelkowe(tab,n);
- 
-  for(int i=0;i<n;i++)
-          cout<<tab[i]<<" ";
- 
-  cout<<endl;
-  return 0;
-		
-    
-          }
 
 		
