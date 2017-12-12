@@ -1,0 +1,18 @@
+#!/bin/bash
+
+shortest="root"
+longest="root"
+
+while read a
+do
+if [ ${a} -lt ${shortest} ]
+then
+shortest=a
+fi
+if [ ${a} -gt ${shortest} ]
+then
+longest=a
+fi
+done <<< "$(cut -d : -f 1 /etc/passwd)"
+echo "$shortest"
+echo "$longest"
